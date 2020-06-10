@@ -1,5 +1,5 @@
 import Foundation
-
+//swiftlint:disable all
 extension String {
     static func flag(for code: String) -> String? {
         func isLowercaseASCIIScalar(_ scalar: Unicode.Scalar) -> Bool {

@@ -1,3 +1,4 @@
+//swiftlint:disable all
 import Foundation
 extension NSLocale {
     func extensionCode(countryCode : String?) -> String? {

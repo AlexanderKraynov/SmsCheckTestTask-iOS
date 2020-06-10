@@ -1,8 +1,8 @@
 import Foundation
 
-class Country {
-    var countryCode: String?
-    var extensionCode: String?
-    var name: String?
-    var flag: String?
+struct Country {
+    let countryCode: String?
+    let extensionCode: String?
+    let name: String?
+    let flag: String?
 }

@@ -5,4 +5,5 @@ target 'TestTask' do
   pod 'Kingfisher'
   pod 'KKPinCodeTextField'
   pod 'LGButton'
+  pod 'SwiftLint'
 end

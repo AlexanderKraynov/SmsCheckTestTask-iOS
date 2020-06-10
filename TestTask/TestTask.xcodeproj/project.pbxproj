@@ -17,6 +17,8 @@
 		286C870C24901B7E00E83F8C /* PhoneNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C870B24901B7E00E83F8C /* PhoneNumber.swift */; };
 		286C870E2490DFE200E83F8C /* SmsCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286C870D2490DFE200E83F8C /* SmsCodeViewController.storyboard */; };
 		286C87102490E61400E83F8C /* SmsCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C870F2490E61400E83F8C /* SmsCodeViewController.swift */; };
+		286C8712249184A700E83F8C /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C8711249184A700E83F8C /* ApplicationService.swift */; };
+		286C87142491855600E83F8C /* ApplicationServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286C87132491855600E83F8C /* ApplicationServiceImpl.swift */; };
 		28BB73ED248FA3BF00270739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB73EC248FA3BF00270739 /* AppDelegate.swift */; };
 		28BB73EF248FA3BF00270739 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB73EE248FA3BF00270739 /* SceneDelegate.swift */; };
 		28BB73F1248FA3BF00270739 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB73F0248FA3BF00270739 /* MainViewController.swift */; };
@@ -39,6 +41,8 @@
 		286C870B24901B7E00E83F8C /* PhoneNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumber.swift; sourceTree = "<group>"; };
 		286C870D2490DFE200E83F8C /* SmsCodeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SmsCodeViewController.storyboard; sourceTree = "<group>"; };
 		286C870F2490E61400E83F8C /* SmsCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsCodeViewController.swift; sourceTree = "<group>"; };
+		286C8711249184A700E83F8C /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
+		286C87132491855600E83F8C /* ApplicationServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceImpl.swift; sourceTree = "<group>"; };
 		28BB73E9248FA3BF00270739 /* TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BB73EC248FA3BF00270739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28BB73EE248FA3BF00270739 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,62 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		286C871524918BF800E83F8C /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				286C871924918C4200E83F8C /* SmsCode */,
+				286C871724918C1D00E83F8C /* CountryPicker */,
+				286C871624918C0600E83F8C /* Main */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		286C871624918C0600E83F8C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				28BB73F0248FA3BF00270739 /* MainViewController.swift */,
+				28BB73F2248FA3BF00270739 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		286C871724918C1D00E83F8C /* CountryPicker */ = {
+			isa = PBXGroup;
+			children = (
+				286C871824918C3200E83F8C /* Cell */,
+				28598E01248FBC29007F0B58 /* CountryPickerView.xib */,
+				28598E03248FBD0D007F0B58 /* CountryPickerViewController.swift */,
+			);
+			path = CountryPicker;
+			sourceTree = "<group>";
+		};
+		286C871824918C3200E83F8C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				286C8703248FF95A00E83F8C /* CountryCell.xib */,
+				286C8705248FFA7400E83F8C /* CountryCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		286C871924918C4200E83F8C /* SmsCode */ = {
+			isa = PBXGroup;
+			children = (
+				286C870D2490DFE200E83F8C /* SmsCodeViewController.storyboard */,
+				286C870F2490E61400E83F8C /* SmsCodeViewController.swift */,
+			);
+			path = SmsCode;
+			sourceTree = "<group>";
+		};
+		286C871A24918C4F00E83F8C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				286C8711249184A700E83F8C /* ApplicationService.swift */,
+				286C87132491855600E83F8C /* ApplicationServiceImpl.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		28BB73E0248FA3BF00270739 = {
 			isa = PBXGroup;
 			children = (
@@ -102,21 +162,15 @@
 		28BB73EB248FA3BF00270739 /* TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				286C871A24918C4F00E83F8C /* Service */,
+				286C871524918BF800E83F8C /* Screen */,
 				286829D5248FF22D00CCF372 /* Util */,
 				28EF05DE248FEFE000BA616C /* Model */,
 				28BB73EC248FA3BF00270739 /* AppDelegate.swift */,
 				28BB73EE248FA3BF00270739 /* SceneDelegate.swift */,
-				28BB73F0248FA3BF00270739 /* MainViewController.swift */,
-				28BB73F2248FA3BF00270739 /* Main.storyboard */,
 				28BB73F5248FA3C000270739 /* Assets.xcassets */,
 				28BB73F7248FA3C000270739 /* LaunchScreen.storyboard */,
 				28BB73FA248FA3C000270739 /* Info.plist */,
-				28598E01248FBC29007F0B58 /* CountryPickerView.xib */,
-				28598E03248FBD0D007F0B58 /* CountryPickerViewController.swift */,
-				286C8703248FF95A00E83F8C /* CountryCell.xib */,
-				286C8705248FFA7400E83F8C /* CountryCell.swift */,
-				286C870D2490DFE200E83F8C /* SmsCodeViewController.storyboard */,
-				286C870F2490E61400E83F8C /* SmsCodeViewController.swift */,
 			);
 			path = TestTask;
 			sourceTree = "<group>";
@@ -151,6 +205,7 @@
 				28BB73E5248FA3BF00270739 /* Sources */,
 				28BB73E6248FA3BF00270739 /* Frameworks */,
 				28BB73E7248FA3BF00270739 /* Resources */,
+				2859C9E2249195200089720F /* CheckErrors */,
 				59AC99DA00BE14DEA636F560 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -212,6 +267,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2859C9E2249195200089720F /* CheckErrors */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = CheckErrors;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		59AC99DA00BE14DEA636F560 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -267,6 +340,8 @@
 				286C870A24901B0C00E83F8C /* User.swift in Sources */,
 				28EF05DD248FEFD700BA616C /* Country.swift in Sources */,
 				28598E04248FBD0D007F0B58 /* CountryPickerViewController.swift in Sources */,
+				286C8712249184A700E83F8C /* ApplicationService.swift in Sources */,
+				286C87142491855600E83F8C /* ApplicationServiceImpl.swift in Sources */,
 				286C87102490E61400E83F8C /* SmsCodeViewController.swift in Sources */,
 				286C8702248FF79000E83F8C /* NSLocale.swift in Sources */,
 			);
