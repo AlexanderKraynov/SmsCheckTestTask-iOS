@@ -1,9 +1,0 @@
-platform :ios, '11.0'
-
-target 'TestTask' do
-  use_frameworks!
-  pod 'Kingfisher'
-  pod 'KKPinCodeTextField'
-  pod 'LGButton'
-  pod 'SwiftLint'
-end
