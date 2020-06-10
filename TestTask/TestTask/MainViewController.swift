@@ -10,6 +10,7 @@ class MainViewController: UIViewController {
         case expanded
         case collapsed
     }
+    private var explanded = false
     var serverUrl = "https://webhook.site/4e88daa3-ddc5-436e-9659-993660603103"
     var user = User(id: 1, name: "Anitta", phoneNumber: PhoneNumber(code: "+1",number: "720 505-50-00"), email: "")
     var pickerIsVisible = false
@@ -23,6 +24,8 @@ class MainViewController: UIViewController {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted: CGFloat = 0
     
+    var activeField: UITextField?
+    
     @IBOutlet private var sightImageView: UIImageView!
     @IBOutlet private var sightNameLabel: UILabel!
     @IBOutlet private var greetingsLabel: UILabel!
@@ -35,8 +38,7 @@ class MainViewController: UIViewController {
     @IBOutlet private var signInStackView: UIStackView!
     @IBOutlet private var signInButton: UIButton!
     @IBOutlet private var signInAnnotationLabel: UILabel!
-    var activeField: UITextField?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpMainView()
@@ -49,8 +51,10 @@ class MainViewController: UIViewController {
     
     func setUpKeyboardGesture() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
+
     func setupCountryPickerButton() {
         countryPickerButton.setImage(UIImage(named: "Globe"), for: [])
         countryPickerButton.backgroundColor = .white
@@ -136,7 +140,7 @@ class MainViewController: UIViewController {
                 case .collapsed:
                     self.visualEffectView.effect = nil
                 }
-
+                
             }
             fadeAnimator.startAnimation()
             runningAnimations.append(fadeAnimator)
@@ -170,29 +174,32 @@ class MainViewController: UIViewController {
         countryPickerButton.setTitle(flag, for: .normal)
         countryCodeLabel.text = "+\(code)"
     }
-
+    
     @IBAction func countryPickerButtonPressed(_ sender: UIButton) {
         dismissKeyboard()
         animateTransitionIfNeeded(state: nextState, duration: 0.9)
     }
     @IBAction func confirmButtonPressed(_ sender: UIButton) {
         dismissKeyboard()
-        user.phoneNumber.number = phoneNumberTextField.text ?? ""
-        user.phoneNumber.code = countryCodeLabel.text ?? ""
-        let url = URL(string: serverUrl)!
-        let data: [String : Any] = ["id": user.id, "phone": "\(user.phoneNumber.code)\(user.phoneNumber.number)"]
-        var request = URLRequest(url: url)
-        let jsonData = try? JSONSerialization.data(withJSONObject: data)
-        request.httpMethod = "POST"
-        request.httpBody = jsonData
-        let task = URLSession.shared.dataTask(with: request)
-        task.resume()
-        let vc = UIStoryboard(name: "SmsCodeViewController", bundle: nil).instantiateViewController(withIdentifier: "SmsCodeViewController") as! SmsCodeViewController
-        vc.setup(with: user.phoneNumber.number)
-        self.present(vc, animated: true, completion: nil)
+        if(!explanded) {
+            user.phoneNumber.number = phoneNumberTextField.text ?? ""
+            user.phoneNumber.code = countryCodeLabel.text ?? ""
+            let url = URL(string: serverUrl)!
+            let data: [String : Any] = ["id": user.id, "phone": "\(user.phoneNumber.code)\(user.phoneNumber.number)"]
+            var request = URLRequest(url: url)
+            let jsonData = try? JSONSerialization.data(withJSONObject: data)
+            request.httpMethod = "POST"
+            request.httpBody = jsonData
+            let task = URLSession.shared.dataTask(with: request)
+            task.resume()
+            let vc = UIStoryboard(name: "SmsCodeViewController", bundle: nil).instantiateViewController(withIdentifier: "SmsCodeViewController") as! SmsCodeViewController
+            vc.setup(with: user.phoneNumber.number)
+            self.present(vc, animated: true, completion: nil)
+        }
     }
     
     @IBAction func signInButtonPressed(_ sender: UIButton) {
+        explanded = true
         signInStackView.isHidden = false
         scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height + 40 + signInStackView.frame.height)
         scrollView.setContentOffset(CGPoint(x: 0, y: 40 + signInStackView.frame.height), animated: true)
@@ -204,10 +211,10 @@ class MainViewController: UIViewController {
         phoneNumberTextField.text = ""
         phoneNumberTextField.placeholder = "your email"
         countryPickerButton.removeFromSuperview()
-         countryCodeLabel.removeFromSuperview()
+        countryCodeLabel.removeFromSuperview()
         phoneNumberTextField.keyboardType = .emailAddress
         view.addConstraint(NSLayoutConstraint(item: phoneNumberTextField as Any, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20))
- 
+        
     }
 }
 
@@ -216,21 +223,21 @@ extension MainViewController: UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     func deregisterFromKeyboardNotifications(){
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     @objc func keyboardWasShown(notification: NSNotification){
         self.scrollView.isScrollEnabled = true
         let info = notification.userInfo!
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
         let contentInsets : UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize!.height + 100, right: 0.0)
-
+        
         self.scrollView.contentInset = contentInsets
         self.scrollView.scrollIndicatorInsets = contentInsets
-
+        
         var aRect : CGRect = self.view.frame
         aRect.size.height -= keyboardSize!.height
         if let activeField = self.activeField {
@@ -239,7 +246,7 @@ extension MainViewController: UITextFieldDelegate {
             }
         }
     }
-
+    
     @objc func keyboardWillBeHidden(notification: NSNotification){
         let info = notification.userInfo!
         let keyboardSize = (info[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
@@ -249,12 +256,12 @@ extension MainViewController: UITextFieldDelegate {
         self.view.endEditing(true)
         self.scrollView.isScrollEnabled = false
     }
-
+    
     func textFieldDidBeginEditing(_ textField: UITextField){
         activeField = textField
         textField.text = ""
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField){
         activeField = nil
     }

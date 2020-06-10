@@ -3,8 +3,10 @@ import UIKit
 
 class SmsCodeViewController: UIViewController {
     private var phoneNumber = ""
+
     @IBOutlet private var phoneNumberLabel: UILabel!
     @IBOutlet private var codeView: KKPinCodeTextField!
+
     @IBAction func SendAgainButtonPressed(_ sender: UIButton) {
         self.presentingViewController?.dismiss(animated: true, completion:nil)
     }

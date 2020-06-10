@@ -11,7 +11,6 @@ class CountryPickerViewController: UIViewController {
     @IBOutlet private var searchBar: UISearchBar!
     @IBOutlet private var tableView: UITableView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -35,6 +34,7 @@ class CountryPickerViewController: UIViewController {
         tableView.sectionIndexColor = .black
         
     }
+    
     func updateSections() {
         countryDictionary.removeAll()
         countrySectionTitles.removeAll()
