@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UfE-K1-fma">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -11,32 +12,32 @@
             <objects>
                 <viewController storyboardIdentifier="SmsCodeViewController" id="UfE-K1-fma" customClass="SmsCodeViewController" customModule="TestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E7E-8L-R3A">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDn-8i-IzX">
-                                <rect key="frame" x="0.0" y="-290" width="600" height="890"/>
+                                <rect key="frame" x="0.0" y="282" width="414" height="614"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm your nubmer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXG-aV-s3y">
-                                        <rect key="frame" x="151.5" y="30" width="297" height="36"/>
+                                        <rect key="frame" x="58.5" y="30" width="297" height="36"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter 4-digit code We just sent to " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3q-K1-wne">
-                                        <rect key="frame" x="142" y="74" width="316" height="21"/>
+                                        <rect key="frame" x="49" y="74" width="316" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone nubmer label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqG-kT-H0q">
-                                        <rect key="frame" x="223.5" y="103" width="153" height="21"/>
+                                        <rect key="frame" x="130.5" y="103" width="153" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g06-il-mEC">
-                                        <rect key="frame" x="196.5" y="183" width="207.5" height="40"/>
+                                        <rect key="frame" x="103.5" y="179.5" width="207.5" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn't get a text. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE7-Au-u6z">
                                                 <rect key="frame" x="0.0" y="9.5" width="130.5" height="21"/>
@@ -65,7 +66,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wR-iH-QnQ" customClass="KKPinCodeTextField">
-                                        <rect key="frame" x="175" y="134" width="250" height="34"/>
+                                        <rect key="frame" x="82" y="134" width="250" height="30.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="2pc-4m-aee"/>
                                         </constraints>
@@ -101,14 +102,24 @@
                                     <constraint firstItem="bqG-kT-H0q" firstAttribute="top" secondItem="a3q-K1-wne" secondAttribute="bottom" constant="8" id="sUP-kc-cal"/>
                                     <constraint firstItem="5wR-iH-QnQ" firstAttribute="top" secondItem="bqG-kT-H0q" secondAttribute="bottom" constant="10" id="zJM-vn-SJ8"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sW-ik-mcK">
-                                <rect key="frame" x="270" y="-305" width="60" height="5"/>
+                                <rect key="frame" x="177" y="267" width="60" height="5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="U2z-ch-Cg7"/>
                                     <constraint firstAttribute="height" constant="5" id="V7C-fb-xgC"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <constraints>
