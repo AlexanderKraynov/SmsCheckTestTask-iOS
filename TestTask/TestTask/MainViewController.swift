@@ -10,6 +10,7 @@ class MainViewController: UIViewController {
         case expanded
         case collapsed
     }
+    var serverUrl = "https://webhook.site/4e88daa3-ddc5-436e-9659-993660603103"
     var user = User(id: 1, name: "Anitta", phoneNumber: PhoneNumber(code: "+1",number: "720 505-50-00"), email: "")
     var pickerIsVisible = false
     var nextState: CountryPickerState {
@@ -31,6 +32,9 @@ class MainViewController: UIViewController {
     @IBOutlet private var phoneNumberTextField:UITextField!
     @IBOutlet private var confirmButton: UIButton!
     @IBOutlet private var scrollView: UIScrollView!
+    @IBOutlet private var signInStackView: UIStackView!
+    @IBOutlet private var signInButton: UIButton!
+    @IBOutlet private var signInAnnotationLabel: UILabel!
     var activeField: UITextField?
 
     override func viewDidLoad() {
@@ -70,6 +74,7 @@ class MainViewController: UIViewController {
         extraInfoLabel.text = extraInfoPlaceholder
         confirmButton.layer.cornerRadius = 10
         confirmButton.clipsToBounds = true
+        signInStackView.isHidden = true
     }
     
     func setUpCounrtyPicker() {
@@ -166,15 +171,43 @@ class MainViewController: UIViewController {
         countryCodeLabel.text = "+\(code)"
     }
 
-    @IBAction func CountryPickerButtonPressed(_ sender: UIButton) {
+    @IBAction func countryPickerButtonPressed(_ sender: UIButton) {
         dismissKeyboard()
         animateTransitionIfNeeded(state: nextState, duration: 0.9)
     }
-    @IBAction func ConfirmButtonPressed(_ sender: UIButton) {
+    @IBAction func confirmButtonPressed(_ sender: UIButton) {
         dismissKeyboard()
+        user.phoneNumber.number = phoneNumberTextField.text ?? ""
+        user.phoneNumber.code = countryCodeLabel.text ?? ""
+        let url = URL(string: serverUrl)!
+        let data: [String : Any] = ["id": user.id, "phone": "\(user.phoneNumber.code)\(user.phoneNumber.number)"]
+        var request = URLRequest(url: url)
+        let jsonData = try? JSONSerialization.data(withJSONObject: data)
+        request.httpMethod = "POST"
+        request.httpBody = jsonData
+        let task = URLSession.shared.dataTask(with: request)
+        task.resume()
         let vc = UIStoryboard(name: "SmsCodeViewController", bundle: nil).instantiateViewController(withIdentifier: "SmsCodeViewController") as! SmsCodeViewController
         vc.setup(with: user.phoneNumber.number)
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
+        signInStackView.isHidden = false
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height + 40 + signInStackView.frame.height)
+        scrollView.setContentOffset(CGPoint(x: 0, y: 40 + signInStackView.frame.height), animated: true)
+        signInAnnotationLabel.text = "or use another way to sign in"
+        signInButton.setTitle("", for: .normal)
+        confirmButton.setTitle("Confirm and get link", for: .normal)
+        dismissKeyboard()
+        phoneNumberTextField.textAlignment = .center
+        phoneNumberTextField.text = ""
+        phoneNumberTextField.placeholder = "your email"
+        countryPickerButton.removeFromSuperview()
+         countryCodeLabel.removeFromSuperview()
+        phoneNumberTextField.keyboardType = .emailAddress
+        view.addConstraint(NSLayoutConstraint(item: phoneNumberTextField as Any, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 20))
+ 
     }
 }
 
@@ -219,6 +252,7 @@ extension MainViewController: UITextFieldDelegate {
 
     func textFieldDidBeginEditing(_ textField: UITextField){
         activeField = textField
+        textField.text = ""
     }
 
     func textFieldDidEndEditing(_ textField: UITextField){

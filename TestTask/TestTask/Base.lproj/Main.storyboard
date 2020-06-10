@@ -27,7 +27,7 @@
                                                     <constraint firstAttribute="width" secondItem="EM2-oX-7Dw" secondAttribute="height" multiplier="1.8:1" id="Su5-Bz-Vqq"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sight Name label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQm-Zy-Lrh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Sight Name label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQm-Zy-Lrh">
                                                 <rect key="frame" x="20" y="268" width="374" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <nil key="textColor"/>
@@ -43,7 +43,7 @@
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="CountryPickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mEJ-b1-hXh"/>
+                                                    <action selector="countryPickerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mEJ-b1-hXh"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extra info Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGz-q1-XDt">
@@ -52,7 +52,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Greetings Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgo-QR-ClH">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Greetings Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgo-QR-ClH">
                                                 <rect key="frame" x="20" y="328" width="374" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <color key="textColor" red="0.22159589444255492" green="0.83969497723614306" blue="0.85017123287671237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -64,16 +64,15 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="720 505-50-00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCd-sH-rOj">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="720 505-50-00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCd-sH-rOj">
                                                 <rect key="frame" x="138.5" y="443.5" width="265.5" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="tel"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="phonePad" textContentType="tel"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-Si-SdY">
-                                                <rect key="frame" x="102" y="475" width="240" height="2"/>
+                                                <rect key="frame" x="102" y="475" width="210" height="2"/>
                                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="240" id="3Qn-OA-8nP"/>
                                                     <constraint firstAttribute="height" constant="2" id="KZj-kS-Woq"/>
                                                 </constraints>
                                             </view>
@@ -88,14 +87,14 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="ConfirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYF-iG-Ydo"/>
+                                                    <action selector="confirmButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYF-iG-Ydo"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1n-DD-9Cv">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m1n-DD-9Cv" userLabel="CombinedView">
                                                 <rect key="frame" x="83" y="557.5" width="248" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not you? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fR-bG-bfa">
-                                                        <rect key="frame" x="0.0" y="9.5" width="73" height="21"/>
+                                                        <rect key="frame" x="0.0" y="9.5" width="73" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -105,6 +104,9 @@
                                                         <state key="normal" title="Sign in as another person">
                                                             <color key="titleColor" red="0.2330885315" green="0.88324411250000001" blue="0.89426369859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5YA-a2-dNQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -117,11 +119,113 @@
                                                     <constraint firstItem="7fR-bG-bfa" firstAttribute="leading" secondItem="m1n-DD-9Cv" secondAttribute="leading" id="vbG-Mu-UJk"/>
                                                 </constraints>
                                             </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A05-Ij-0iN">
+                                                <rect key="frame" x="20" y="617.5" width="374" height="189"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rhg-dK-j0Y" customClass="LGButton" customModule="LGButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="36"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="8"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Sign in with phone number"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="iphone-call-history"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="abs-xH-1We" customClass="LGButton" customModule="LGButton">
+                                                        <rect key="frame" x="0.0" y="51" width="374" height="36"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Sign in with Google"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="googleg_standard_color_128dp"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zc-oU-pXG" customClass="LGButton" customModule="LGButton">
+                                                        <rect key="frame" x="0.0" y="102" width="374" height="36"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Sign in with Apple"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="xapple.png.pagespeed.ic.iz9LaIc2ui"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uR1-lX-eF9" customClass="LGButton" customModule="LGButton">
+                                                        <rect key="frame" x="0.0" y="153" width="374" height="36"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="6"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="Sign in with Facebook"/>
+                                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImageSrc" value="images"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="A05-Ij-0iN" secondAttribute="height" multiplier="374:189" id="zJE-tL-19V"/>
+                                                </constraints>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="EM2-oX-7Dw" secondAttribute="trailing" constant="20" id="2VX-yW-p0U"/>
+                                            <constraint firstItem="dCd-sH-rOj" firstAttribute="top" secondItem="eGz-q1-XDt" secondAttribute="bottom" constant="50" id="4vF-M4-5i3"/>
                                             <constraint firstItem="AmX-kb-2vU" firstAttribute="centerX" secondItem="s50-5U-0RQ" secondAttribute="centerX" id="6QS-5d-OdF"/>
+                                            <constraint firstItem="fVE-Si-SdY" firstAttribute="centerX" secondItem="s50-5U-0RQ" secondAttribute="centerX" id="BOS-ul-BsO"/>
                                             <constraint firstItem="dCd-sH-rOj" firstAttribute="top" secondItem="o0Q-Dw-ED2" secondAttribute="top" id="BQl-To-rAY"/>
                                             <constraint firstItem="dCd-sH-rOj" firstAttribute="leading" secondItem="la1-i4-lyd" secondAttribute="trailing" constant="10" id="EuJ-3w-gg9"/>
                                             <constraint firstAttribute="trailing" secondItem="BQm-Zy-Lrh" secondAttribute="trailing" constant="20" id="FMt-W0-574"/>
@@ -133,7 +237,8 @@
                                             <constraint firstItem="Qgo-QR-ClH" firstAttribute="top" secondItem="BQm-Zy-Lrh" secondAttribute="bottom" constant="30" id="OXb-m3-JMv"/>
                                             <constraint firstItem="AmX-kb-2vU" firstAttribute="top" secondItem="fVE-Si-SdY" secondAttribute="bottom" constant="20.5" id="Oln-0g-glO"/>
                                             <constraint firstItem="la1-i4-lyd" firstAttribute="leading" secondItem="o0Q-Dw-ED2" secondAttribute="trailing" constant="7.5" id="QjV-XB-8Rm"/>
-                                            <constraint firstItem="AmX-kb-2vU" firstAttribute="top" secondItem="o0Q-Dw-ED2" secondAttribute="bottom" constant="20" id="TbZ-2x-cDe"/>
+                                            <constraint firstAttribute="trailing" secondItem="A05-Ij-0iN" secondAttribute="trailing" constant="20" id="VQx-di-JdG"/>
+                                            <constraint firstItem="A05-Ij-0iN" firstAttribute="top" secondItem="m1n-DD-9Cv" secondAttribute="bottom" constant="20" id="XSf-rj-p7V"/>
                                             <constraint firstItem="fVE-Si-SdY" firstAttribute="top" secondItem="dCd-sH-rOj" secondAttribute="bottom" id="XsA-u2-TUl"/>
                                             <constraint firstItem="BQm-Zy-Lrh" firstAttribute="top" secondItem="EM2-oX-7Dw" secondAttribute="bottom" constant="30" id="Y3E-XJ-yia"/>
                                             <constraint firstItem="AmX-kb-2vU" firstAttribute="leading" secondItem="s50-5U-0RQ" secondAttribute="leading" constant="20" id="esg-tJ-jpd"/>
@@ -146,6 +251,7 @@
                                             <constraint firstItem="BQm-Zy-Lrh" firstAttribute="leading" secondItem="s50-5U-0RQ" secondAttribute="leading" constant="20" id="oM8-7h-uI0"/>
                                             <constraint firstItem="eGz-q1-XDt" firstAttribute="top" secondItem="Qgo-QR-ClH" secondAttribute="bottom" constant="15" id="p71-F3-N6m"/>
                                             <constraint firstItem="eGz-q1-XDt" firstAttribute="leading" secondItem="s50-5U-0RQ" secondAttribute="leading" constant="20" id="pe7-b6-mn0"/>
+                                            <constraint firstItem="A05-Ij-0iN" firstAttribute="leading" secondItem="s50-5U-0RQ" secondAttribute="leading" constant="20" id="u59-W7-9C0"/>
                                             <constraint firstAttribute="trailing" secondItem="dCd-sH-rOj" secondAttribute="trailing" constant="10" id="vTk-OC-3qx"/>
                                         </constraints>
                                     </view>
@@ -181,6 +287,9 @@
                         <outlet property="scrollView" destination="5PU-hy-FFV" id="htG-hB-Gdp"/>
                         <outlet property="sightImageView" destination="EM2-oX-7Dw" id="7a8-hc-Nw9"/>
                         <outlet property="sightNameLabel" destination="BQm-Zy-Lrh" id="3aC-9I-YF6"/>
+                        <outlet property="signInAnnotationLabel" destination="7fR-bG-bfa" id="WYH-03-pch"/>
+                        <outlet property="signInButton" destination="7xt-1P-4bk" id="DjL-m8-4oa"/>
+                        <outlet property="signInStackView" destination="A05-Ij-0iN" id="CF9-jW-i0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -188,4 +297,10 @@
             <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="googleg_standard_color_128dp" width="42.666667938232422" height="42.666667938232422"/>
+        <image name="images" width="75" height="75"/>
+        <image name="iphone-call-history" width="85.333335876464844" height="85.333335876464844"/>
+        <image name="xapple.png.pagespeed.ic.iz9LaIc2ui" width="85.333335876464844" height="85.333335876464844"/>
+    </resources>
 </document>

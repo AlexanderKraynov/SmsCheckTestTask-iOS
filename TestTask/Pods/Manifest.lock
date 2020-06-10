@@ -3,20 +3,24 @@ PODS:
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
   - KKPinCodeTextField (1.0.0)
+  - LGButton (1.1.6)
 
 DEPENDENCIES:
   - Kingfisher
   - KKPinCodeTextField
+  - LGButton
 
 SPEC REPOS:
   trunk:
     - Kingfisher
     - KKPinCodeTextField
+    - LGButton
 
 SPEC CHECKSUMS:
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
   KKPinCodeTextField: 63a1fb841fd6a412cf664ef64dc065fc6767bd3c
+  LGButton: 9f0a7f9d3030e3f504108342f6b66d64a429371b
 
-PODFILE CHECKSUM: 061e4415c4f2caa4e5d650002c57163d1bd86033
+PODFILE CHECKSUM: 4eccf3eab28d74adcb69ac5c9628e92bf470577f
 
 COCOAPODS: 1.9.1
