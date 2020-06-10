@@ -1,0 +1,22 @@
+PODS:
+  - Kingfisher (5.14.0):
+    - Kingfisher/Core (= 5.14.0)
+  - Kingfisher/Core (5.14.0)
+  - KKPinCodeTextField (1.0.0)
+
+DEPENDENCIES:
+  - Kingfisher
+  - KKPinCodeTextField
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - KKPinCodeTextField
+
+SPEC CHECKSUMS:
+  Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  KKPinCodeTextField: 63a1fb841fd6a412cf664ef64dc065fc6767bd3c
+
+PODFILE CHECKSUM: 061e4415c4f2caa4e5d650002c57163d1bd86033
+
+COCOAPODS: 1.9.1

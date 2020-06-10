@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UfE-K1-fma">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sms Code View Controller-->
+        <scene sceneID="HvG-hu-KIN">
+            <objects>
+                <viewController storyboardIdentifier="SmsCodeViewController" id="UfE-K1-fma" customClass="SmsCodeViewController" customModule="TestTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E7E-8L-R3A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SDn-8i-IzX">
+                                <rect key="frame" x="0.0" y="282" width="414" height="614"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm your nubmer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXG-aV-s3y">
+                                        <rect key="frame" x="58.5" y="30" width="297" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter 4-digit code We just sent to " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3q-K1-wne">
+                                        <rect key="frame" x="49" y="74" width="316" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone nubmer label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqG-kT-H0q">
+                                        <rect key="frame" x="130.5" y="103" width="153" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g06-il-mEC">
+                                        <rect key="frame" x="103.5" y="179.5" width="207.5" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn't get a text. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YE7-Au-u6z">
+                                                <rect key="frame" x="0.0" y="9.5" width="130.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dr1-ZP-N9t">
+                                                <rect key="frame" x="130.5" y="5" width="77" height="30"/>
+                                                <state key="normal" title="Send again">
+                                                    <color key="titleColor" red="0.2330885315" green="0.88324411250000001" blue="0.89426369859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="SendAgainButtonPressed:" destination="UfE-K1-fma" eventType="touchUpInside" id="dOj-c1-MWT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="YE7-Au-u6z" firstAttribute="centerY" secondItem="g06-il-mEC" secondAttribute="centerY" id="3Vs-sE-EmS"/>
+                                            <constraint firstItem="dr1-ZP-N9t" firstAttribute="leading" secondItem="YE7-Au-u6z" secondAttribute="trailing" id="6IQ-W3-CpI"/>
+                                            <constraint firstAttribute="trailing" secondItem="dr1-ZP-N9t" secondAttribute="trailing" id="PrU-HX-s4w"/>
+                                            <constraint firstItem="YE7-Au-u6z" firstAttribute="leading" secondItem="g06-il-mEC" secondAttribute="leading" id="bw0-tc-iJ8"/>
+                                            <constraint firstItem="dr1-ZP-N9t" firstAttribute="centerY" secondItem="g06-il-mEC" secondAttribute="centerY" id="hif-es-1yJ"/>
+                                            <constraint firstAttribute="height" constant="40" id="yEY-oz-8wW"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wR-iH-QnQ" customClass="KKPinCodeTextField">
+                                        <rect key="frame" x="82" y="134" width="250" height="30.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="2pc-4m-aee"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="digitsCount">
+                                                <integer key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderHeight">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="filledDigitBorderColor">
+                                                <color key="value" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="emptyDigitBorderColor">
+                                                <color key="value" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="g06-il-mEC" firstAttribute="centerX" secondItem="SDn-8i-IzX" secondAttribute="centerX" id="03D-rh-NRD"/>
+                                    <constraint firstItem="bqG-kT-H0q" firstAttribute="centerX" secondItem="SDn-8i-IzX" secondAttribute="centerX" id="3yK-JW-UcX"/>
+                                    <constraint firstItem="iXG-aV-s3y" firstAttribute="top" secondItem="SDn-8i-IzX" secondAttribute="top" constant="30" id="6ae-YA-KK6"/>
+                                    <constraint firstItem="g06-il-mEC" firstAttribute="top" secondItem="5wR-iH-QnQ" secondAttribute="bottom" constant="15" id="6oc-cy-T4h"/>
+                                    <constraint firstItem="a3q-K1-wne" firstAttribute="top" secondItem="iXG-aV-s3y" secondAttribute="bottom" constant="8" id="AFx-eq-tIB"/>
+                                    <constraint firstItem="a3q-K1-wne" firstAttribute="centerX" secondItem="SDn-8i-IzX" secondAttribute="centerX" id="Cwn-6a-4BX"/>
+                                    <constraint firstItem="5wR-iH-QnQ" firstAttribute="centerX" secondItem="SDn-8i-IzX" secondAttribute="centerX" id="Ecz-0O-FNZ"/>
+                                    <constraint firstItem="iXG-aV-s3y" firstAttribute="centerX" secondItem="SDn-8i-IzX" secondAttribute="centerX" id="c5G-uE-t1Q"/>
+                                    <constraint firstAttribute="width" secondItem="SDn-8i-IzX" secondAttribute="height" multiplier="207:307" id="epC-0i-XM1"/>
+                                    <constraint firstItem="bqG-kT-H0q" firstAttribute="top" secondItem="a3q-K1-wne" secondAttribute="bottom" constant="8" id="sUP-kc-cal"/>
+                                    <constraint firstItem="5wR-iH-QnQ" firstAttribute="top" secondItem="bqG-kT-H0q" secondAttribute="bottom" constant="10" id="zJM-vn-SJ8"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sW-ik-mcK">
+                                <rect key="frame" x="177" y="267" width="60" height="5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="U2z-ch-Cg7"/>
+                                    <constraint firstAttribute="height" constant="5" id="V7C-fb-xgC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SDn-8i-IzX" firstAttribute="top" secondItem="2sW-ik-mcK" secondAttribute="bottom" constant="10" id="5nK-dn-d6l"/>
+                            <constraint firstItem="SDn-8i-IzX" firstAttribute="leading" secondItem="nC5-Hd-bgq" secondAttribute="leading" id="9SS-kj-z4a"/>
+                            <constraint firstItem="nC5-Hd-bgq" firstAttribute="trailing" secondItem="SDn-8i-IzX" secondAttribute="trailing" id="Cho-Kv-E4m"/>
+                            <constraint firstItem="2sW-ik-mcK" firstAttribute="centerX" secondItem="E7E-8L-R3A" secondAttribute="centerX" id="Moh-IN-End"/>
+                            <constraint firstAttribute="bottom" secondItem="SDn-8i-IzX" secondAttribute="bottom" id="frP-N4-GIO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nC5-Hd-bgq"/>
+                    </view>
+                    <connections>
+                        <outlet property="codeView" destination="5wR-iH-QnQ" id="XCL-HK-6u6"/>
+                        <outlet property="phoneNumberLabel" destination="bqG-kT-H0q" id="F0Z-XB-Gwf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfu-cB-9nV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.7971014492753632" y="89.732142857142847"/>
+        </scene>
+    </scenes>
+</document>
